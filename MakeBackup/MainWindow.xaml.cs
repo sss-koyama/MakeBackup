@@ -29,6 +29,19 @@ namespace MakeBackup
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
+            string[] dirNames =
+            {
+                "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa",
+                "1", "6", "11", "16", "21", "26"
+            };
+
+            foreach(string dirName in dirNames)
+            {
+                string dirPath = txbPath.Text + @"\" + dirName;
+
+                Directory.CreateDirectory(dirPath);
+            }
+
             var assembly = Assembly.GetExecutingAssembly();
             var resourceName = "MakeBackup.TextFiles.BackUp_week.sql";
 
