@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace MakeBackup
 {
@@ -28,6 +29,29 @@ namespace MakeBackup
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "MakeBackup.TextFiles.BackUp_week.sql";
+
+            string sqlFileContent;
+            using (var stream = assembly.GetManifestResourceStream(resourceName))
+            {
+                if (stream != null)
+                {
+                    using (var sr = new StreamReader(stream))
+                    {
+                        sqlFileContent = sr.ReadToEnd();
+                        //MessageBox.Show(sqlFileContent);
+                        sqlFileContent = sqlFileContent.Replace("TARGETDB", txbDB.Text);
+                        sqlFileContent = sqlFileContent.Replace("BACKUPPATH", txbPath.Text);
+                        //MessageBox.Show(sqlFileContent);
+
+                        string sqlFilePath = txbPath.Text + @"\BackUp.sql";
+                        System.Text.Encoding sqlEnc = System.Text.Encoding.GetEncoding("UTF-8");
+                        System.IO.File.WriteAllText(sqlFilePath, sqlFileContent, sqlEnc);
+                    }
+                }
+            }
+
             string[] arrayStr =
             {
                 "REM このバッチの文字コードはshift_jis、改行はCRLFにします。" ,
@@ -38,13 +62,14 @@ namespace MakeBackup
 
             };
 
-            string batFilePath = @"C:\Users\X270-01\Desktop\Backup.bat";
+
+            string batFilePath = txbPath.Text + @"\BackUp.bat";
             //文字コードをShift JIS
-            System.Text.Encoding enc = System.Text.Encoding.GetEncoding("shift_jis");
+            System.Text.Encoding batEnc = System.Text.Encoding.GetEncoding("shift_jis");
             string tx = "sqlcmd -S ";
             tx = tx + txbSv.Text + " -E -f i:65001 -i " + "\"" + txbPath.Text + "\\" + "Backup.sql\" > \"" + txbPath.Text + @"\Backup.log" + "\"";
-            System.IO.File.WriteAllLines(batFilePath, arrayStr, enc);
-            System.IO.File.AppendAllText(batFilePath, tx, enc);
+            System.IO.File.WriteAllLines(batFilePath, arrayStr, batEnc);
+            System.IO.File.AppendAllText(batFilePath, tx, batEnc);
 
         }
     }
