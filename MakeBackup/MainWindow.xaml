@@ -8,9 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Label Content="サーバー名" HorizontalAlignment="Left" Margin="59,15,0,0" VerticalAlignment="Top" Width="95"/>
-        <TextBox x:Name="txbSv" HorizontalAlignment="Left" Height="23" Margin="60,45,0,0" TextWrapping="Wrap" Text="SSSsystem" VerticalAlignment="Top" Width="335"/>
+        <TextBox x:Name="txbSv" HorizontalAlignment="Left" Height="23" Margin="60,45,0,0" TextWrapping="Wrap" Text="V13KENSHO2012R2\SQLEXPRESS" VerticalAlignment="Top" Width="335"/>
         <Label Content="バックアップ先パス" HorizontalAlignment="Left" Margin="59,83,0,0" VerticalAlignment="Top" Width="95"/>
-        <TextBox x:Name="txbPath" HorizontalAlignment="Left" Height="23" Margin="60,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430"/>
+        <TextBox x:Name="txbPath" HorizontalAlignment="Left" Height="23" Margin="60,115,0,0" TextWrapping="Wrap" Text="\\landisk2\disk1\AutoBackupFiles\支援部資料\対応履歴backup" VerticalAlignment="Top" Width="430"/>
         <Button x:Name="btnCreate" Content="作成" HorizontalAlignment="Left" Margin="355,289,0,0" VerticalAlignment="Top" Width="75" Click="btnCreate_Click"/>
     </Grid>
 </Window>

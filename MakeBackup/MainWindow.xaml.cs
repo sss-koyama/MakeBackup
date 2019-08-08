@@ -28,9 +28,24 @@ namespace MakeBackup
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
+            string[] arrayStr =
+            {
+                "REM このバッチの文字コードはshift_jis、改行はCRLFにします。" ,
+                "REM -f i:65001 でSQL実行時の文字コードをUTF - 8にします。",
+                "REM これが抜けていると文字化けして日本語のディレクトリが開けません。",
+                "REM このバッチファイルはSSMSがインストールされているサーバーまたはクライアントのローカルディレクトリに置きます。",
+                "REM ネットワークドライブでは実行できません。" + Environment.NewLine
+
+            };
+
+            string batFilePath = @"C:\Users\X270-01\Desktop\Backup.bat";
+            //文字コードをShift JIS
+            System.Text.Encoding enc = System.Text.Encoding.GetEncoding("shift_jis");
             string tx = "sqlcmd -S ";
             tx = tx + txbSv.Text + " -E -f i:65001 -i " + "\"" + txbPath.Text + "\\" + "Backup.sql\" > \"" + txbPath.Text + @"\Backup.log" + "\"";
-            File.WriteAllText(@"C:\Users\X270-01\Desktop\test.bat", tx);
+            System.IO.File.WriteAllLines(batFilePath, arrayStr, enc);
+            System.IO.File.AppendAllText(batFilePath, tx, enc);
+
         }
     }
 }
