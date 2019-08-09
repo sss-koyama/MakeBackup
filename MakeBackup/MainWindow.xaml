@@ -13,6 +13,11 @@
         <TextBox x:Name="txbDB" HorizontalAlignment="Left" Height="23" Margin="60,115,0,0" TextWrapping="Wrap" Text="SupportDB" VerticalAlignment="Top" Width="300"/>
         <Label Content="バックアップ先パス" HorizontalAlignment="Left" Margin="59,159,0,0" VerticalAlignment="Top" Width="95"/>
         <TextBox x:Name="txbPath" HorizontalAlignment="Left" Height="23" Margin="60,191,0,0" TextWrapping="Wrap" Text="\\landisk2\disk1\AutoBackupFiles\支援部資料\対応履歴backup" VerticalAlignment="Top" Width="430"/>
-        <Button x:Name="btnCreate" Content="作成" HorizontalAlignment="Left" Margin="355,289,0,0" VerticalAlignment="Top" Width="75" Click="btnCreate_Click"/>
+
+        <RadioButton x:Name="rbtWeek" Content="週間バックアップ" HorizontalAlignment="Left" Margin="65,245,0,0" VerticalAlignment="Top" ToolTip="曜日毎、締め日翌日"/>
+        <RadioButton x:Name="rbtMonth" Content="月間バックアップ" HorizontalAlignment="Left" Margin="65,271,0,0" VerticalAlignment="Top" ToolTip="毎月１～３１"/>
+
+        <Button x:Name="btnCreate" Content="作成" HorizontalAlignment="Left" Margin="355,347,0,0" VerticalAlignment="Top" Width="75" Click="btnCreate_Click"/>
+        <Button x:Name="btnReadme" Content="?" HorizontalAlignment="Left" Margin="735,22,0,0" VerticalAlignment="Top" Width="25" FontSize="14" Click="btnReadme_Click"/>
     </Grid>
 </Window>

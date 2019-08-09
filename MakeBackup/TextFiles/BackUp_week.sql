@@ -25,7 +25,7 @@ CASE
 END
 
 PRINT @wDir;
-SET @sql = @sql + @wDir + '\SupportDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''SupportDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
+SET @sql = @sql + @wDir + '\TARGETDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''TARGETDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
 EXEC (@sql);
 
 
@@ -37,7 +37,7 @@ IF @dNum = 1
 	BEGIN
 		SET @wDir = 1
 		PRINT @wDir;
-		SET @sql = @sql + @wDir + '\SupportDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''SupportDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
+		SET @sql = @sql + @wDir + '\TARGETDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''TARGETDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
 		EXEC (@sql);
 	END
 
@@ -45,7 +45,7 @@ ELSE IF @dNum = 6
 	BEGIN
 		SET @wDir = 6
 		PRINT @wDir;
-		SET @sql = @sql + @wDir + '\SupportDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''SupportDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
+		SET @sql = @sql + @wDir + '\TARGETDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''TARGETDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
 		EXEC (@sql);
 	END
 
@@ -53,7 +53,7 @@ ELSE IF @dNum = 11
 	BEGIN
 		SET @wDir = 11
 		PRINT @wDir;
-		SET @sql = @sql + @wDir + '\SupportDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''SupportDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
+		SET @sql = @sql + @wDir + '\TARGETDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''TARGETDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
 		EXEC (@sql);
 	END
 
@@ -61,7 +61,7 @@ ELSE IF @dNum = 16
 	BEGIN
 		SET @wDir = 16
 		PRINT @wDir;
-		SET @sql = @sql + @wDir + '\SupportDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''SupportDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
+		SET @sql = @sql + @wDir + '\TARGETDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''TARGETDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
 		EXEC (@sql);
 	END
 
@@ -69,7 +69,7 @@ ELSE IF @dNum = 21
 	BEGIN
 		SET @wDir = 21
 		PRINT @wDir;
-		SET @sql = @sql + @wDir + '\SupportDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''SupportDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
+		SET @sql = @sql + @wDir + '\TARGETDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''TARGETDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
 		EXEC (@sql);
 	END
 
@@ -78,6 +78,6 @@ ELSE IF @dNum = 26
 		
 		SET @wDir = 26
 		PRINT @wDir;
-		SET @sql = @sql + @wDir + '\SupportDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''SupportDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
+		SET @sql = @sql + @wDir + '\TARGETDB.bak'' WITH NOFORMAT, NOINIT,  NAME = N''TARGETDB-完全 データベース バックアップ'', SKIP, NOREWIND, NOUNLOAD,  STATS = 10'
 		EXEC (@sql);
 	END
