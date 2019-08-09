@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MakeBackup"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="640">
     <Grid>
         <Label Content="サーバー名" HorizontalAlignment="Left" Margin="59,15,0,0" VerticalAlignment="Top" Width="95"/>
         <TextBox x:Name="txbSv" HorizontalAlignment="Left" Height="23" Margin="60,45,0,0" TextWrapping="Wrap" Text="V13KENSHO2012R2\SQLEXPRESS" VerticalAlignment="Top" Width="300"/>
@@ -17,7 +17,7 @@
         <RadioButton x:Name="rbtWeek" Content="週間バックアップ" HorizontalAlignment="Left" Margin="65,245,0,0" VerticalAlignment="Top" ToolTip="曜日毎、締め日翌日"/>
         <RadioButton x:Name="rbtMonth" Content="月間バックアップ" HorizontalAlignment="Left" Margin="65,271,0,0" VerticalAlignment="Top" ToolTip="毎月１～３１"/>
 
-        <Button x:Name="btnCreate" Content="作成" HorizontalAlignment="Left" Margin="355,347,0,0" VerticalAlignment="Top" Width="75" Click="btnCreate_Click"/>
-        <Button x:Name="btnReadme" Content="?" HorizontalAlignment="Left" Margin="735,22,0,0" VerticalAlignment="Top" Width="25" FontSize="14" Click="btnReadme_Click"/>
+        <Button x:Name="btnCreate" Content="作成" HorizontalAlignment="Left" Margin="281,347,0,0" VerticalAlignment="Top" Width="75" Click="btnCreate_Click"/>
+        <Button x:Name="btnReadme" Content="?" HorizontalAlignment="Left" Margin="586,12,0,0" VerticalAlignment="Top" Width="25" FontSize="14" Click="btnReadme_Click"/>
     </Grid>
 </Window>

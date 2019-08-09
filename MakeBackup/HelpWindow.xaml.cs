@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace MakeBackup
 {
     /// <summary>
-    /// ReadmeWindow.xaml の相互作用ロジック
+    /// HelpWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class ReadmeWindow : Window
+    public partial class HelpWindow : Window
     {
-        public ReadmeWindow()
+        public HelpWindow()
         {
             InitializeComponent();
         }

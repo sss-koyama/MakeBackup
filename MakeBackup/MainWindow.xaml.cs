@@ -109,7 +109,7 @@ namespace MakeBackup
 
         private void btnReadme_Click(object sender, RoutedEventArgs e)
         {
-            ReadmeWindow readme = new ReadmeWindow();
+            HelpWindow readme = new HelpWindow();
             readme.ShowDialog();
         }
     }
