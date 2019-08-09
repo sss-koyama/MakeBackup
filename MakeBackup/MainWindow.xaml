@@ -5,19 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MakeBackup"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="640">
-    <Grid>
-        <Label Content="サーバー名" HorizontalAlignment="Left" Margin="59,15,0,0" VerticalAlignment="Top" Width="95"/>
-        <TextBox x:Name="txbSv" HorizontalAlignment="Left" Height="23" Margin="60,45,0,0" TextWrapping="Wrap" Text="V13KENSHO2012R2\SQLEXPRESS" VerticalAlignment="Top" Width="300"/>
-        <Label Content="データベース名" HorizontalAlignment="Left" Margin="59,83,0,0" VerticalAlignment="Top" Width="95"/>
-        <TextBox x:Name="txbDB" HorizontalAlignment="Left" Height="23" Margin="60,115,0,0" TextWrapping="Wrap" Text="SupportDB" VerticalAlignment="Top" Width="300"/>
-        <Label Content="バックアップ先パス" HorizontalAlignment="Left" Margin="59,159,0,0" VerticalAlignment="Top" Width="95"/>
-        <TextBox x:Name="txbPath" HorizontalAlignment="Left" Height="23" Margin="60,191,0,0" TextWrapping="Wrap" Text="\\landisk2\disk1\AutoBackupFiles\支援部資料\対応履歴backup" VerticalAlignment="Top" Width="430"/>
+        Title="MainWindow" Height="450" Width="680">
+    <Grid Margin="15" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="280"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <Label Content="サーバー名" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95"/>
+            <TextBox x:Name="txbSv" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="V13KENSHO2012R2\SQLEXPRESS" VerticalAlignment="Top" Width="300"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <Label Content="データベース名" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95"/>
+            <TextBox x:Name="txbDB" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="SupportDB" VerticalAlignment="Top" Width="300"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
+            <Label Content="バックアップ先パス" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95"/>
+            <TextBox x:Name="txbPath" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="\\landisk2\disk1\AutoBackupFiles\支援部資料" VerticalAlignment="Top" Width="430"/>
+        </StackPanel>
+        <Grid Grid.Row="3" VerticalAlignment="Center" Margin="0,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <RadioButton x:Name="rbtWeek" Grid.Row="0" Content="週間バックアップ" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="曜日毎、締め日翌日"/>
+            <RadioButton x:Name="rbtMonth" Grid.Row="1" Content="月間バックアップ" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="毎月１～３１"/>
+        </Grid>
+        
+        <Button x:Name="btnCreate" Grid.Row="6" Grid.Column="1" Content="作成" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Click="btnCreate_Click"/>
 
-        <RadioButton x:Name="rbtWeek" Content="週間バックアップ" HorizontalAlignment="Left" Margin="65,245,0,0" VerticalAlignment="Top" ToolTip="曜日毎、締め日翌日"/>
-        <RadioButton x:Name="rbtMonth" Content="月間バックアップ" HorizontalAlignment="Left" Margin="65,271,0,0" VerticalAlignment="Top" ToolTip="毎月１～３１"/>
-
-        <Button x:Name="btnCreate" Content="作成" HorizontalAlignment="Left" Margin="281,347,0,0" VerticalAlignment="Top" Width="75" Click="btnCreate_Click"/>
-        <Button x:Name="btnReadme" Content="?" HorizontalAlignment="Left" Margin="586,12,0,0" VerticalAlignment="Top" Width="25" FontSize="14" Click="btnReadme_Click"/>
+        <Button x:Name="btnReadme" Grid.Row="0" Grid.Column="3" Content="?" VerticalAlignment="Top" Width="25" FontSize="14" Click="btnReadme_Click" HorizontalAlignment="Right"/>
     </Grid>
 </Window>

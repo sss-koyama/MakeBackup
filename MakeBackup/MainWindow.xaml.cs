@@ -33,7 +33,7 @@ namespace MakeBackup
 
             if((rbtMonth.IsChecked ==false) && (rbtWeek.IsChecked == false))
             {
-                MessageBox.Show("バックアップ間隔を選択してください。");
+                MessageBox.Show("バックアップ間隔を選択してください。", "", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -48,7 +48,7 @@ namespace MakeBackup
 
             if ((dirresult == true) && (SQLresult == true) && (batresurt == true))
             {
-                MessageBox.Show("作成しました。" + Environment.NewLine + "バックアップフォルダを確認してください。");
+                MessageBox.Show("バックアップフォルダを確認してください。", "作成しました", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             //string[] dirNames =
             //{
