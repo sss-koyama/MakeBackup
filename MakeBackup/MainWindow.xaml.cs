@@ -1,19 +1,6 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Reflection;
+using Microsoft.Win32;
 
 namespace MakeBackup
 {
@@ -30,21 +17,31 @@ namespace MakeBackup
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
+            //ラジオボタンをチェックを値に
+            string rbtFlg = "";
 
-            if((rbtMonth.IsChecked ==false) && (rbtWeek.IsChecked == false))
+if (rbtWeek.IsChecked == true)
+            {
+                rbtFlg = "week";
+            }
+            else if (rbtMonth.IsChecked == true)
+            {
+                rbtFlg = "month";
+            }
+            else
             {
                 MessageBox.Show("バックアップ間隔を選択してください。", "", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             MakeDir makeDir = new MakeDir();
-            bool dirresult = makeDir.MakeDirMethod();
+            bool dirresult = makeDir.MakeDirMethod(rbtFlg, txbPath.Text);
 
             MakeSQL makeSQL = new MakeSQL();
             bool SQLresult = makeSQL.MakeSQLMethod();
 
             MakeBat makeBat = new MakeBat();
-            bool batresurt = makeBat.MakeBackupMethod();
+            bool batresurt = makeBat.MakeBackupMethod(txbSv.Text,txbPath.Text);
 
             if ((dirresult == true) && (SQLresult == true) && (batresurt == true))
             {
@@ -111,6 +108,33 @@ namespace MakeBackup
         {
             HelpWindow readme = new HelpWindow();
             readme.ShowDialog();
+        }
+
+        private void btnSelectDir_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SaveFileDialog dlg = new SaveFileDialog();
+                dlg.FileName = "GetFolderName.";
+                dlg.CheckFileExists = false;
+                dlg.Title = "フォルダを選択してください";
+
+                if (dlg.ShowDialog() == true)
+                {
+                    string path = System.IO.Path.GetDirectoryName(dlg.FileName);
+
+                    txbPath.Text = path;
+                }
+                //SelectDir selectdir = new SelectDir();
+                //string path = selectdir.SelectDirMethod();
+
+                //txbPath.Text = path;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "失敗");
+            }
+            
         }
     }
 }

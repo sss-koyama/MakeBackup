@@ -32,7 +32,11 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
             <Label Content="バックアップ先パス" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95"/>
-            <TextBox x:Name="txbPath" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="\\landisk2\disk1\AutoBackupFiles\支援部資料" VerticalAlignment="Top" Width="430"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txbPath" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="\\landisk2\disk1\AutoBackupFiles\支援部資料" VerticalAlignment="Top" Width="430"/>
+                <Button x:Name="btnSelectDir" Content="参照" Margin="5,0,0,0" Click="btnSelectDir_Click"/>
+            </StackPanel>
+            
         </StackPanel>
         <Grid Grid.Row="3" VerticalAlignment="Center" Margin="0,5">
             <Grid.RowDefinitions>
