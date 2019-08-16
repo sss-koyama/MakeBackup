@@ -18,7 +18,7 @@
                     <RotateTransform/>
                     <TranslateTransform Y="0.758"/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="バックアップ先に指定されたフォルダに、次の３つを作成します。"/><LineBreak/><Run Text="１．曜日ごとまたは日ごとのフォルダ"/><LineBreak/><Run Text="２．バックアップを実行するSQLファイル"/><LineBreak/><Run Text="３．SQLを実行するバッチファイル"/><LineBreak/><Run/><LineBreak/><Run Text="作成されたバッチファイルをSSMSがインストールされたサーバーまたはクライアントのローカルドライブに"/><Run Text="移動し"/><Run Text="、"/><LineBreak/><Run Text="タスクスケジューラで実行し"/><Run Text="てください"/><Run Text="。"/><LineBreak/><Run Text="ネットワークドライブでは実行できません。"/><LineBreak/><Run/><LineBreak/><Run Text="SQLはWindows認証で実行されます。"/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="バックアップ先に指定されたフォルダに、次の３つを作成します。"/><LineBreak/><Run Text="１．曜日ごとまたは日ごとのフォルダ"/><LineBreak/><Run Text="２．バックアップを実行するSQLファイル"/><LineBreak/><Run Text="３．SQLを実行するバッチファイル"/><LineBreak/><Run/><LineBreak/><Run Text="作成されたバッチファイルをSSMSがインストールされたサーバーまたはクライアントのローカルドライブに"/><Run Text="移動し"/><Run Text="、"/><LineBreak/><Run Text="タスクスケジューラで実行し"/><Run Text="てください"/><Run Text="。"/><LineBreak/><Run Text="ネットワークドライブでは実行できません。"/><LineBreak/><Run/><LineBreak/><Run Text="SQLはWindows認証で実行されます。"/><LineBreak/><Run Text="タスクスケジューラを設定・実行するユーザーは次の権限が必要です。"/><LineBreak/><Run Text="・ユーザーマッピングでdbowner"/><LineBreak/><Run Text="・バックアップ保存先フォルダへの読み書き"/></TextBlock>
         <Button x:Name="btnClose" Content="閉じる" HorizontalAlignment="Left" Margin="290,385,0,0" VerticalAlignment="Top" Width="75" Click="btnClose_Click"/>
     </Grid>
 </Window>

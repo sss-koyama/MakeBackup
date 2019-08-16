@@ -17,7 +17,7 @@ namespace MakeBackup
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            //ラジオボタンをチェックを値に
+            //ラジオボタンのチェックを値に
             string rbtFlg = "";
 
 if (rbtWeek.IsChecked == true)
